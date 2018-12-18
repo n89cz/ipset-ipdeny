@@ -18,6 +18,9 @@ do
     ipset add $CODE-set $IP
 done
 
-iptables -I INPUT -m set --match-set $CODE-set src -p tcp --dport 22 -j DROP
+#iptables -I INPUT -m set --match-set $CODE-set src -p tcp --dport 22 -j DROP
+#iptables -A INPUT -p tcp --match-set cn-set src -j DROP
+
+iptables -I INPUT -m set --match-set $CODE-set src -j DROP
 
 done < $COUNTRYCODE
