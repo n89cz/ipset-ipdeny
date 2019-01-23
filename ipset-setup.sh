@@ -1,11 +1,11 @@
 #!/bin/bash
 #
-# countries ipblocks -> ipset -> iptables = drop traffic from specified coutry
+# countries ipblocks -> ipset -> iptables = drop traffic from specified country
 #
 
 IPSET="ipset"
 IPTABLES="iptables"
-SETNAME="ipblocks"
+#SETNAME="ipblocks"
 COUNTRYCODE="ccodes.list"
 
 while read CODE
