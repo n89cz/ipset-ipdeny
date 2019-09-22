@@ -5,7 +5,7 @@
 
 # To disable mailing leave $MAIL empty
 #MAIL=
-MAIL="mailto@net.com"
+#MAIL="mailto@net.com"
 
 CURL_OK="200"
 
