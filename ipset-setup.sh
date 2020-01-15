@@ -3,9 +3,9 @@
 # countries ipblocks -> ipset -> iptables = drop traffic from specified country
 #
 
+# Mailing is in todo state
 # To disable mailing leave $MAIL empty
-#MAIL=
-#MAIL="mailto@net.com"
+MAIL=
 
 CURL_OK="200"
 
@@ -14,7 +14,6 @@ IPTABLES="iptables"
 #SETNAME="ipblocks"
 COUNTRYCODE="ccodes.list"
 
-
 function preflight_check()
 {
 #first check if ipdeny.com is accesible:
@@ -22,7 +21,7 @@ ISOK=$(curl --connect-timeout 10 --max-time 10 -s -o /dev/null -w "%{http_code}"
 
 if [ "$ISOK" == "$CURL_OK" ] ; then
     echo "OK"
-    ipset_setup
+    #ipset_setup
 elif [ "$ISOK" != "$CURL_OK" ] ; then
     #send mail with alert and exit
     echo "curl error $CURL_OUTPUT"
